@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./login/login.component";
-import {AuthGuard} from "./helpers/auth.guard";
-import {RegisterComponent} from "./register/register.component";
-import {LandingComponent} from "./landing/landing.component";
+import {LoginComponent} from './login/login.component';
+import {AuthGuard} from './helpers/auth.guard';
+import {RegisterComponent} from './register/register.component';
+import {LandingComponent} from './landing/landing.component';
 
 const routes: Routes = [
   {path: '', component: LandingComponent},

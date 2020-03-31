@@ -8,13 +8,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {ErrorInterceptor} from "./helpers/error.interceptor";
-import {JwtInterceptor} from "./helpers/jwt.interceptor";
-import {LoginComponent} from "./login/login.component";
-import {RegisterComponent} from "./register/register.component";
-import {LandingComponent} from "./landing/landing.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {ErrorInterceptor} from './helpers/error.interceptor';
+import {JwtInterceptor} from './helpers/jwt.interceptor';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {LandingComponent} from './landing/landing.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, LandingComponent],
