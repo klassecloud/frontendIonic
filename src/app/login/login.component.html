@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Login</h5>
+                    <form [formGroup]="loginForm" class="form-signin" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <input  type="text" class="form-control" id="username" formControlName="username" aria-describedby="userHelp" placeholder="Benutzername">
+                            <label for="username">Benutzername</label>
+                            <small id="userHelp" class="form-text text-muted">Logge dich bitte mit deinen Benutzername ein.</small>
+                            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input  type="password"  formControlName="password" id="password" class="form-control" placeholder="Password" required/>
+                            <label for="password">Passwort</label>
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-3">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Passwort merken</label>
+                        </div>
+                        <button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Login
+                        </button>
+                        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                        <a class="btn btn-lg btn-primary btn-block text-uppercase text-white">Passwort vergessen</a>
+                        <a class="btn btn-lg btn-primary btn-block text-uppercase text-white" [routerLink]="['/register']" >Registrieren</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-grid>
+<ion-row>
+    <ion-col>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <ion-item>
+                <ion-label position="floating">Username</ion-label>
+                <ion-input formControlName="username"></ion-input>
+            </ion-item>
+           <ion-item>
+               <ion-label position="floating">Password</ion-label>
+               <ion-input type="password" formControlName="password"></ion-input>
+           </ion-item>
+            <ion-item>
+                <ion-label>Passwort merken</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+            </ion-item>
+            <ion-button type="submit" [disabled]="loading" expand="block">Login</ion-button>
+        </form>
+    </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-button [routerLink]="['/register']" expand="block">Registrieren</ion-button>
+        </ion-col>
+    </ion-row>
+</ion-grid>
