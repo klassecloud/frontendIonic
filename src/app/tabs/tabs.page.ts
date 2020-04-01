@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../service/authentication.service";
+import {User} from "../model/user";
 
 @Component({
   selector: 'app-tabs',
@@ -8,8 +9,12 @@ import {AuthenticationService} from "../service/authentication.service";
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
-  constructor() {}
+    currentUser: User;
+  constructor(
+      private authenticationService: AuthenticationService
+  ) {
+      this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
+  }
 
 
 }
