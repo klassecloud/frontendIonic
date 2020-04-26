@@ -1,0 +1,18 @@
+<ion-content>
+    <ion-card *ngFor="let task of (tasks | async)">
+        <ion-card-header>
+            <ion-card-title>{{task.title}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <table>
+                <tr>
+                    <td colspan="2">{{task.content}}</td>
+                </tr>
+                <tr>
+                    <td>📅 {{task.dueDate | date : 'dd.MM.yyyy'}}</td>
+                    <td>{{task?.subject?.classroom}}</td>
+                </tr>
+            </table>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
