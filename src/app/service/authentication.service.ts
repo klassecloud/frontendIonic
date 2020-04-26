@@ -3,7 +3,7 @@ import { environment} from '../../environments/environment';
 import {User} from '../model/user';
 import {map} from 'rxjs/operators';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -21,16 +21,23 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
+
   login(username: string, password: string) {
-    return this.http.post<any>(`${environment.apiUrl}/auth/login`, {username, password})
-        .pipe(map(user => {
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-          return user;
-        }));
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Basic ' + btoa(username + ':' + password)
+      })
+    };
+    return this.http.get<any>(`${environment.apiUrl}/login`, httpOptions)
+          .pipe(map(user => {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.currentUserSubject.next(user);
+            return user;
+          }));
   }
   register(username: string, password: string, nickname: string) {
-    return this.http.post<any>(`${environment.apiUrl}/auth/register`, {username, nickname, password}).pipe();
+    return this.http.post<any>(`${environment.apiUrl}/user`, {userName: username, nickName: nickname, password: password}).pipe();
   }
 
   logout() {

@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       public toastController: ToastController
   ) {
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
   }
 

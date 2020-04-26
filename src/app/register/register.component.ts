@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
       private authenticationService: AuthenticationService
   ) {
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     }
   }
 
