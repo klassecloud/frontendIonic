@@ -1,7 +1,10 @@
-
-
 <ion-content>
 
-  <ion-button (click)="logout()">Logout</ion-button>
+    <ion-button class="subject" *ngFor="let course of (courses | async)" (click)="navigateTo(course)">
+        <img *ngIf="icon(course)" [src]="icon(course)" width="64" alt="" />
+        <div id="subject-button-{{course.name}}" class="button-text">{{course.name}}</div>
+    </ion-button>
+
+    <ion-button class="logout" expand="block" (click)="logout()">Logout</ion-button>
 
 </ion-content>

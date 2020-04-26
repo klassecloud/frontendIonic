@@ -1,15 +1,14 @@
+import {Subject} from './subject';
+
 enum State {
   finished= 'finished',
   inProcess = 'inProcess',
   started = 'started'
 }
-
-export interface Tasks {
+export interface Task {
   id: number;
-  courseId: number;
-  parentId: number;
   title: string;
   content: string;
-  state: State;
   dueDate: Date;
+  subject: Subject;
 }

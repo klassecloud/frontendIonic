@@ -1,3 +1,56 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+ion-button.subject {
+  font-size: smaller;
+  position: relative;
+  min-height: 150px;
+  width: 45%;
+}
+
+ion-button.subject .button-text{
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+
+ion-button.subject:nth-child(2n+1) {
+  margin: 10px 15px 0 10px;
+}
+
+ion-button img {
+  stroke: white;
+}
+
+ion-button.subject:nth-child(2n+0) {
+  margin: 10px 10px 10px 0;
+}
+
+ion-button.subject:nth-child(1n) {
+  --background: #38AC87;
+}
+
+ion-button.subject:nth-child(2n) {
+  --background: #EA929C;
+}
+
+ion-button.subject:nth-child(3n) {
+  --background: #EC6445;
+}
+
+ion-button.subject:nth-child(4n) {
+  --background: #F5AB35;
+}
+
+ion-button.subject:nth-child(5n) {
+  --background: #404E9E;
+}
+
+ion-button.subject:nth-child(6n) {
+  --background: #3F4F68;
+}
+
+ion-button.logout {
+  margin: 10px 10px;
+}
