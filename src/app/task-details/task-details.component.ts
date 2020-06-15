@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EquationString } from './equationString';
-
 import { PhotoService } from '../service/photo.service';
 
 @Component({
-  selector: 'task-details',
-  templateUrl: 'task-details.component.html',
-  styleUrls: ['task-details.component.scss']
+  selector: 'app-task-details',
+  templateUrl: './task-details.component.html',
+  styleUrls: ['./task-details.component.scss']
 })
 
-export class Tab2Page {
+export class TaskDetailsComponent implements OnInit {
     title: string = 'Addieren';
     subtitle: string = 'Einstieg ohne Zehnerübergang mit Stellentafel: bis 100 bis 1.000';
     content: string = 'Hier lassen sich 2 bis 3 Zahlen im dreistelligen sechsstelligen Bereich schriftlich addieren. Für den Übertrag sind die gestrichelten Kästchen vorgesehen.';

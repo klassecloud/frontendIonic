@@ -4,6 +4,7 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './helpers/auth.guard';
 import {RegisterComponent} from './register/register.component';
 import {LandingComponent} from './landing/landing.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule), canActivate: [AuthGuard]
   },
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'task-details', component: TaskDetailsComponent}
 ];
 @NgModule({
   imports: [

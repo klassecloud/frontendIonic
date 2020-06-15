@@ -6,6 +6,7 @@
 
 <ion-content>
     <ion-card color="white">
+
         <div (click)="switchHide()">
             <ion-item color="cyan" lines="none">
                 <ion-card-title color="white">{{title}}</ion-card-title>
@@ -60,27 +61,27 @@
             </ion-item>
         </div>
 
-    </ion-card>
+     </ion-card>
 
-    <ion-card>
-        <ion-item color="primary" button (click)="send()">
-            <ion-label color="black">Aufgabe senden</ion-label>
-        </ion-item>
-    </ion-card>
-    <ion-grid>
-        <ion-row>
-            <ion-col size="6"
-                     *ngFor="let photo of photoService.photos; index as position">
-                <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}">
-                </ion-img>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+     <ion-card>
+         <ion-item color="primary" button (click)="send()">
+             <ion-label color="black">Aufgabe senden</ion-label>
+         </ion-item>
+     </ion-card>
+     <ion-grid>
+         <ion-row>
+             <ion-col size="6"
+                      *ngFor="let photo of photoService.photos; index as position">
+                 <ion-img src="{{ photo.base64 ? photo.base64 : photo.webviewPath }}">
+                 </ion-img>
+             </ion-col>
+         </ion-row>
+     </ion-grid>
 
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+     <ion-fab vertical="bottom" horizontal="center" slot="fixed">
 
-        <ion-fab-button (click)="photoService.addNewToGallery()">
-            <ion-icon name="camera"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
-</ion-content>
+         <ion-fab-button (click)="photoService.addNewToGallery()">
+             <ion-icon name="camera"></ion-icon>
+         </ion-fab-button>
+     </ion-fab>
+ </ion-content>
