@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../service/authentication.service";
-import {ClassroomService} from "../service/classroom.service";
+//import {ClassroomService} from "../service/classroom.service";
 
 @Component({
   selector: 'app-tab1',
@@ -13,11 +13,11 @@ export class Tab1Page implements OnInit {
   constructor(
       private router: Router,
       private authenticationService: AuthenticationService,
-      private classRoomService: ClassroomService
+      //private classRoomService: ClassroomService
   ) {}
 
   ngOnInit(): void {
-    this.classRoomService.getSubjects();
+    //this.classRoomService.getSubjects();
   }
 
   logout() {

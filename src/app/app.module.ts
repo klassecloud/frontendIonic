@@ -15,11 +15,12 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {LandingComponent} from './landing/landing.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { KatexModule } from 'ng-katex';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, LandingComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, KatexModule],
   providers: [
     StatusBar,
     SplashScreen,
