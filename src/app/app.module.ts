@@ -16,13 +16,13 @@ import {RegisterComponent} from './register/register.component';
 import {LandingComponent} from './landing/landing.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 
-import {ReactiveFormsModule} from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { KatexModule } from 'ng-katex';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, LandingComponent, TaskDetailsComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, KatexModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, FormsModule, KatexModule],
   providers: [
     StatusBar,
     SplashScreen,
